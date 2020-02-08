@@ -41,7 +41,7 @@ import { FloatNumberPipe } from './common/pipes';
         BrowserAnimationsModule,
 
         AppRoutingModule,
-        RouterModule.forChild()
+        RouterModule.forRoot([])
     ],
     providers: [
         HttpCustormClient,
