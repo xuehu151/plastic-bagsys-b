@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
-import { APP_BASE_HREF } from '@angular/common';
+import { CommonModule, APP_BASE_HREF } from '@angular/common';
 import { HttpCustormClient } from './providers/HttpClient';
 import { HttpClientModule } from '@angular/common/http';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -45,7 +45,10 @@ import { FloatNumberPipe } from './common/pipes';
     ],
     providers: [
         HttpCustormClient,
-        { provide: APP_BASE_HREF, useValue: '/' }
+        {
+            provide: LocationStrategy,
+            useClass: HashLocationStrategy
+        },
     ],
     bootstrap: [ AppComponent ]
 })
