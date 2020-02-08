@@ -11,10 +11,10 @@ export class WithdrawalComponent implements OnInit {
     balance: string;
     freezeBalance: string;
     amount: string;
-    cashPerson: string;
-    phone: string;
+    bankName: string;
+    bankPhone: string;
     idCard: string;
-    openingBank: string;
+    bankAccount: string;
     bankCard: string;
     submitBtn: boolean = true;
 
@@ -34,9 +34,9 @@ export class WithdrawalComponent implements OnInit {
     }
 
     formChange(): void{
-        if(this.amount && this.cashPerson &&
-            this.phone && this.idCard &&
-            this.openingBank && this.bankCard ){
+        if(this.amount && this.bankName &&
+            this.bankPhone && this.idCard &&
+            this.bankAccount && this.bankCard ){
             this.submitBtn = false;
         }
     }
@@ -46,15 +46,16 @@ export class WithdrawalComponent implements OnInit {
         let telReg = /^1(3|4|5|6|7|8|9)\d{9}$/;
         let regIdNo = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
         let regName =/^[\u4e00-\u9fa5]{2,4}$/;
+        let bankReg = /^([1-9]{1})(\d{15}|\d{18})$/;
 
         if(!reg.test(this.amount)){
             alert('输入金额必须为正数!');
             return false
-        }else  if ( !regName.test(this.cashPerson) ) {
+        }else  if ( !regName.test(this.bankName) ) {
             alert('真实姓名填写有误!');
             return false
         }
-        else  if ( !telReg.test(this.phone) ) {
+        else  if ( !telReg.test(this.bankPhone) ) {
             alert('输入合法的手机号!');
             return false
         }
@@ -62,14 +63,24 @@ export class WithdrawalComponent implements OnInit {
             alert('身份证号填写有误!');
             return false
         }
-        else  if ( !regName.test(this.openingBank) ) {
+        else  if ( !regName.test(this.bankAccount) ) {
             alert('开户行填写有误!');
             return false
         }
-        else  if ( !telReg.test(this.phone) ) {
-            alert('输入合法的手机号!');
+        else  if ( !bankReg.test(this.bankCard) ) {
+            alert('银行卡号填写有误!');
             return false
         }
+
+        let params = {
+            amount: this.amount,
+            bankName: this.bankName,
+            bankPhone: this.bankPhone,
+            idCard: this.idCard,
+            bankAccount: this.bankAccount,
+            bankCard: this.bankCard
+        };
+
 
     }
 

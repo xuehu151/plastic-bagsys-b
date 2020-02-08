@@ -1,3 +1,7 @@
+
+console.log(location.origin);
+let url = location.origin + '/';
 export const environment = {
-  production: true
+    production: true,
+    apiBase: url,
 };

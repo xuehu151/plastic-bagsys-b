@@ -1,0 +1,138 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    font-size: 1.5rem;
+    background: #f1f1f4;
+}
+
+#withdrawal {
+    height: 100%;
+}
+
+.withdrawal {
+    font-size: 16px;
+    height: 100%;
+    position: relative;
+}
+
+.title {
+    padding: 0 15px;
+}
+
+.current-money {
+    font-size: .9rem;
+}
+
+.money {
+    width: 100%;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.money span:last-child {
+    font-size: .8rem;
+}
+
+.money-num {
+    font-size: 1.2rem;
+}
+
+.current-balance {
+    height: 9.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url("../../../assets/images/bg_img@2x.png") no-repeat center;
+    background-size: 100% 100%;
+}
+
+.title {
+    width: 100%;
+    color: white;
+}
+
+.title span img {
+    width: 1rem;
+    margin-top: 1px;
+}
+
+.title span {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cash-in {
+    padding: 15px 15px;
+    background: white;
+}
+
+.cash-status {
+    font-size: .8rem;
+    margin: 10px 0;
+    padding-left: 5px;
+    font-weight: 600;
+}
+
+.cash-num {
+    background: #f1f1f4;
+    padding: 12px 15px 12px 10px;
+    border-radius: 10px;
+    color: red;
+}
+
+.withdrawal-content {
+    padding: 10px 15px;
+    margin-top: 10px;
+    background: white;
+}
+
+.content-title {
+    height: 42px;
+    line-height: 42px;
+    font-size: .9rem;
+    font-weight: 600;
+}
+
+.form-item {
+    height: 42px;
+    border-bottom: 1px solid #f1f1f4;
+    line-height: 42px;
+}
+
+.form-item label {
+    display: inline-flex;
+    width: 5rem;
+    font-size: .9rem;
+}
+
+.form-item input[type=text] {
+    width: calc(100% - 6rem);
+    height: calc(100% - 6px);
+    border: none;
+    outline: none;
+    font-size: .8rem;
+}
+
+.sure-btn {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.sure-btn button {
+    border: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    background-color: #3284fc;
+    border-radius: 3px;
+    outline: none;
+}

@@ -10,8 +10,8 @@ import { ServiceConfig } from "../../providers/service.config";
 })
 
 export class LoginComponent implements OnInit{
-    private username: string = '13072923459';
-    private password: string = '923459';
+    username: string = '13072923459';
+    password: string = '923459';
 
 
     constructor (  private http: HttpCustormClient,

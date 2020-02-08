@@ -31,14 +31,14 @@
         <div class="form-item">
             <label>提现人</label>
             <input type="text"
-                   [(ngModel)]="cashPerson"
+                   [(ngModel)]="bankName"
                    (ngModelChange)="formChange()"
                    placeholder="请输入提现人姓名">
         </div>
         <div class="form-item">
             <label>手机号</label>
             <input type="text"
-                   [(ngModel)]="phone"
+                   [(ngModel)]="bankPhone"
                    (ngModelChange)="formChange()"
                    placeholder="请输入相应手机号">
         </div>
@@ -52,7 +52,7 @@
         <div class="form-item">
             <label>开户行</label>
             <input type="text"
-                   [(ngModel)]="openingBank"
+                   [(ngModel)]="bankAccount"
                    (ngModelChange)="formChange()"
                    placeholder="请输入相应开户行">
         </div>
