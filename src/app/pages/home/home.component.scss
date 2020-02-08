@@ -1,0 +1,46 @@
+.home {
+    font-size: 16px;
+    height: 100%;
+    padding: 15px 15px;
+    background: #3284fc;
+}
+.home-title{
+    color: white;
+}
+
+.title-name{
+    font-size: 1.2rem;
+}
+.home-title span{
+    display: inline-flex;
+    margin-top: .8rem;
+}
+.home-content{
+    margin-top: 1.5rem;
+}
+.content-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 15px -8px;
+    border-radius: 8px;
+    background: white;
+}
+.content-list > img{
+    width: 5rem;
+}
+.content-list span{
+    color: #3185fc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .9rem;
+    font-weight: 600;
+}
+.icon-enter{
+    width: 1.2rem;
+    margin-left: .5rem;
+    cursor: pointer;
+}

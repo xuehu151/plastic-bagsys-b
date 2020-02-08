@@ -1,0 +1,100 @@
+html,
+body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background: #f1f1f4;
+}
+#withdrawal{
+    height: 100%;
+}
+.withdrawal {
+    font-size: 16px;
+    height: 100%;
+    position: relative;
+}
+.title{
+    padding: 0 15px;
+}
+.current-money{
+    font-size: .9rem;
+}
+.money{
+    width: 100%;
+    margin-top: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.money span:last-child{
+    font-size: .8rem;
+}
+.money-num{
+    font-size: 1.2rem;
+}
+.apply-for{
+    border: 1px solid #ff9600;
+    background: #ff9600;
+    padding: 3px 6px;
+    border-radius: 10px;
+}
+.current-balance{
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url("../../../assets/images/bg_img@2x.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.title{
+    width: 100%;
+    color: white;
+}
+.title span img {
+    width: 1rem;
+    margin-top: 1px;
+}
+.title span{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cash-in{
+    background: white;
+}
+.data-list{
+    height: 7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f1f4;
+}
+.data-static{
+    width: 50%;
+    height: 100%;
+    padding: 0 15px;
+    display: inline-flex;
+    align-items: center;
+    border-right: 1px solid #f1f1f4;
+}
+.data-static:last-child{
+    border-right: 0;
+}
+.data-static img{
+    width: 1.6rem;
+}
+.data-static .details{
+    width: 100%;
+}
+.data-static .details span{
+    width: 100%;
+    display: inline-flex;
+    justify-content: flex-end;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.data-static .details span:last-child{
+    color: #8e8d93;
+    font-weight: 500;
+    margin-top: 10px;
+}

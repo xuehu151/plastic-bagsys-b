@@ -1,0 +1,49 @@
+<div class="withdrawal">
+    <div class="withdrawal-title">
+        <div class="current-balance">
+            <div class="title">
+                <div class="current-money">当前余额</div>
+                <div class="money">
+                    <span class="money-num">{{balance | floatNumberPipe}}</span>
+                    <span class="apply-for" (click)="goToApplyFor()">
+                        申请提现
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="cash-in">
+            <div class="data-list">
+                <div class="data-static">
+                    <img src="../../../assets/images/icon_order.svg" alt="今日订单数">
+                    <div class="details">
+                        <span>今日订单数</span>
+                        <span>1887</span>
+                    </div>
+                </div>
+                <div class="data-static">
+                    <img src="../../../assets/images/icon_earnings.svg" alt="今日获取收益">
+                    <div class="details">
+                        <span>今日获取收益</span>
+                        <span>1887</span>
+                    </div>
+                </div>
+            </div>
+            <div class="data-list">
+                <div class="data-static">
+                    <img src="../../../assets/images/icon_ cumulative.svg" alt="累计订单数">
+                    <div class="details">
+                        <span>累计订单数</span>
+                        <span>1887</span>
+                    </div>
+                </div>
+                <div class="data-static">
+                    <img src="../../../assets/images/icon_ acc.svg" alt="累计获取收益">
+                    <div class="details">
+                        <span>累计获取收益</span>
+                        <span>1887</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

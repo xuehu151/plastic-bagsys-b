@@ -1,0 +1,92 @@
+html,
+body{
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background: white;
+}
+#withdrawal{
+    height: 100%;
+}
+.withdrawal {
+    font-size: 16px;
+    height: 100%;
+    position: relative;
+}
+.current-balance{
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url("../../../assets/images/bg_img@2x.png") no-repeat center;
+    background-size: 100% 100%;
+}
+.current-device{
+    width: 100%;
+    color: white;
+}
+.current-device span{
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+.current-device span:last-child{
+    font-size: 1.2rem;
+    margin-top: 15px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.current-device span:last-child i{
+    font-size: .8rem;
+}
+.current-device i{
+    font-style: normal;
+}
+
+.charts{
+    height: 14rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid red;
+}
+.charts i{
+    width: 0;
+    height: 0;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
+    border-bottom: 10px solid white;
+    position: absolute;
+    top: -10px;
+    left: calc(50% - 4px);
+}
+.device-info{
+    margin-top: 10px;
+    padding: 15px 15px;
+    border: 1px solid gold;
+}
+.title{
+    font-weight: 600;
+}
+.panel-info{
+    padding: 10px 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background: #ffece9;
+}
+.list{
+    height: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.list span{
+    width: 4rem;
+    font-size: .8rem;
+}
+.list div{
+    width: calc(100% - 4rem);
+    font-size: .8rem;
+}

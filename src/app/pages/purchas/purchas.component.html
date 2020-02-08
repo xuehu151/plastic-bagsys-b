@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            font-size: 1.5rem;
+            background: #f1f1f4;
+        }
+
+        #withdrawal {
+            height: 100%;
+        }
+
+        .withdrawal {
+            font-size: 16px;
+            height: 100%;
+            position: relative;
+        }
+
+        .title {
+            padding: 0 15px;
+        }
+
+        .current-money {
+            font-size: .9rem;
+        }
+
+        .money {
+            width: 100%;
+            margin-top: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .money span:last-child {
+            font-size: .8rem;
+        }
+
+        .money-num {
+            font-size: 1.2rem;
+        }
+
+        .current-balance {
+            height: 9.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: url("../../../assets/images/bg_img@2x.png") no-repeat center;
+            background-size: 100% 100%;
+        }
+
+        .title {
+            width: 100%;
+            color: white;
+        }
+
+        .title span img {
+            width: 1rem;
+            margin-top: 1px;
+        }
+
+        .title span {
+            display: inline-flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cash-in {
+            padding: 15px 15px;
+            background: white;
+        }
+
+        .cash-status {
+            font-size: .8rem;
+            margin: 10px 0;
+            padding-left: 5px;
+            font-weight: 600;
+        }
+
+        .cash-num {
+            background: #f1f1f4;
+            padding: 12px 15px 12px 10px;
+            border-radius: 10px;
+            color: red;
+        }
+
+        .withdrawal-content {
+            padding: 10px 15px;
+            margin-top: 10px;
+            background: white;
+        }
+
+        .content-title {
+            height: 42px;
+            line-height: 42px;
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        .form-item {
+            height: 42px;
+            border-bottom: 1px solid #f1f1f4;
+            line-height: 42px;
+        }
+
+        .form-item label {
+            display: inline-flex;
+            width: 5rem;
+            font-size: .9rem;
+        }
+
+        .form-item input[type=text] {
+            width: calc(100% - 6rem);
+            height: calc(100% - 6px);
+            border: none;
+            outline: none;
+            font-size: .8rem;
+        }
+
+        .sure-btn {
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+        }
+
+        .sure-btn button {
+            border: 0;
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            font-size: 14px;
+            background-color: #3284fc;
+            border-radius: 3px;
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="withdrawal">
+    <div class="withdrawal-title">
+        <div class="current-balance">
+            <div class="title">
+                <div class="current-money">当前余额</div>
+                <div class="money">
+                    <span class="money-num">{{balance | floatNumberPipe}}</span>
+                    <span (click)="goToWithdrawalsRecord()">
+                            提现记录
+                            <img src="../../../assets/images/icon_enterWhite.svg" alt="">
+                        </span>
+                </div>
+            </div>
+        </div>
+        <div class="cash-in">
+            <div class="cash-status">提现中</div>
+            <div class="cash-num">￥{{freezeBalance | floatNumberPipe}}</div>
+        </div>
+    </div>
+    <div class="withdrawal-content">
+        <div class="content-title">
+            申请提现
+        </div>
+        <div class="form-item">
+            <label>申请金额</label>
+            <input type="text" placeholder="请输入整数金额">
+        </div>
+        <div class="form-item">
+            <label>提现人</label>
+            <input type="text" placeholder="请输入提现人姓名">
+        </div>
+        <div class="form-item">
+            <label>手机号</label>
+            <input type="text" placeholder="请输入相应手机号">
+        </div>
+        <div class="form-item">
+            <label>身份证号</label>
+            <input type="text" placeholder="请输入相应身份证号">
+        </div>
+        <div class="form-item">
+            <label>开户行</label>
+            <input type="text" placeholder="请输入相应开户行">
+        </div>
+        <div class="form-item">
+            <label>银行卡号</label>
+            <input type="text" placeholder="请输入相应银行卡号">
+        </div>
+    </div>
+    <div class="sure-btn">
+        <button (click)="subFormInfo()">提 交</button>
+    </div>
+</div>
+
+</body>
+</html>

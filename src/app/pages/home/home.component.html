@@ -1,0 +1,31 @@
+    <div class="home">
+        <div class="home-title">
+            <div class="title-name">
+                早上好，{{userInfo?.username}}
+            </div>
+            <span>欢迎回家!</span>
+        </div>
+        <div class="home-content">
+            <div class="content-list">
+                <img src="../../../assets/images/icon%20_data@2x.png" alt="">
+                <span (click)="searchData()">
+                    查数据
+                    <img class="icon-enter" src="../../../assets/images/icon_enter.svg" alt="">
+                </span>
+            </div>
+            <div class="content-list">
+                <img src="../../../assets/images/icon_equipment@2x.png" alt="">
+                <span (click)="goDevice()">
+                    看设备
+                    <img class="icon-enter" src="../../../assets/images/icon_enter.svg" alt="">
+                </span>
+            </div>
+            <div class="content-list">
+                <img src="../../../assets/images/icon_purchase@2x.png" alt="">
+                <span (click)="purchasingOrder()">
+                    采购申请
+                    <img class="icon-enter" src="../../../assets/images/icon_enter.svg" alt="">
+                </span>
+            </div>
+        </div>
+    </div>

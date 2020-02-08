@@ -1,0 +1,43 @@
+body{
+    background: #ffffff;
+}
+.record{
+    padding: 5px 5px;
+}
+.record-item{
+    padding: 8px 0;
+    border-bottom: 1px solid #f0eff5;
+}
+.record-status{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0;
+}
+.apply-for{
+    height: 1.3rem;
+    color: #fe9b0c;
+    padding: 0 4px;
+    font-size: .8rem;
+    border: 1px solid #fe9b0c;
+    border-radius: 4px;
+    line-height: 1.3rem;
+}
+.amount-money{
+    font-size: 1rem;
+    color: #c9c9cc;
+}
+.phone{
+    font-size: .8rem;
+}
+.card{
+    font-size: .8rem;
+}
+.open-bank{
+    justify-content: flex-start;
+}
+.open-bank span{
+    margin-right: 1rem;
+    font-size: .8rem;
+    color: #c9c9cc;
+}

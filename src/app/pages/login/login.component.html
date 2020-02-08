@@ -1,0 +1,30 @@
+<div class="db_login">
+        <div class="db_login_top">
+            代理商登录
+        </div>
+        <div class="login_form">
+            <p class="form_item">
+                <img src="../../../assets/images/phone.svg" alt="手机号">
+                <input type="text" [(ngModel)]="username" placeholder="输入手机号">
+                <img src="../../../assets/images/icon_%20delete.svg"
+                     class="delete-btn"
+                     alt="重置"
+                     *ngIf="username"
+                     (click)="clearForm()">
+            </p>
+            <p class="form_item">
+                <img src="../../../assets/images/pass.svg" alt="密码">
+                <input type="password"
+                       [(ngModel)]="password"
+                       placeholder="输入密码">
+                <img src="../../../assets/images/icon_%20delete.svg"
+                     class="delete-btn"
+                     alt="重置"
+                     *ngIf="password"
+                     (click)="clearForm()">
+            </p>
+            <p class="form_btn">
+                <button (click)="login()">登录</button>
+            </p>
+        </div>
+    </div>
