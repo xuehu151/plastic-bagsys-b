@@ -59,7 +59,7 @@
                     "builder": "@angular-devkit/build-angular:dev-server",
                     "options": {
                         "browserTarget": "plastic-bagsys-b:build",
-                        "host": "192.168.0.101",
+                        "host": "0.0.0.0",
                         "disableHostCheck": true
 
                     },
