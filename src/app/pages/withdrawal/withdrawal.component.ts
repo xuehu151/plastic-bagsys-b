@@ -10,8 +10,8 @@ import { ServiceConfig } from "../../providers/service.config";
 })
 
 export class WithdrawalComponent implements OnInit {
-    balance: string;
-    freezeBalance: string;
+    balance: string = '';
+    freezeBalance: string = '0.00';
     amount: string = '1';
     bankName: string = '张三';
     bankPhone: string = '13072923458';
@@ -74,6 +74,10 @@ export class WithdrawalComponent implements OnInit {
         }
         else if ( !bankReg.test(this.bankCard) ) {
             alert('银行卡号填写有误!');
+            return false
+        }
+        else if(!this.balance){
+            alert('余额不足!');
             return false
         }
         let params = {
