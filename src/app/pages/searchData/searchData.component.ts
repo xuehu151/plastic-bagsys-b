@@ -26,7 +26,7 @@ export class SearchDataComponent implements OnInit{
             // console.info(res);
             if ( res.code === 10000 ) {
                 this.itemData = res.data;
-                this.balance = res.data.balance || '0';
+                this.balance = res.data.balance;
             }
             else {
                 // this.errInfo = res.message;
