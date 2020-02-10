@@ -27,7 +27,10 @@ export class WithdrawalComponent implements OnInit {
 
     ngOnInit (): void {
         this.activeRoute.queryParams.subscribe(params => {
-            let obj = JSON.parse(params.data);
+            let obj;
+            if(params.data){
+                obj = JSON.parse(params.data);
+            }
             this.balance = obj.balance;
             this.freezeBalance = obj.freezeBalance;
         })
