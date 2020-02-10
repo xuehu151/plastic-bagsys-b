@@ -5,9 +5,11 @@ import { ServiceConfig } from './service.config';
 
 @Injectable()
 export class HttpCustormClient {
+    URL : string;
 
     constructor ( public http: HttpClient,
                   private router: Router ) {
+        this.URL = ServiceConfig.APIBASE;
     }
 
     public getJson ( url, cb?: Function ) {
@@ -20,7 +22,7 @@ export class HttpCustormClient {
     }
 
     public get ( url, cb?: Function ) {
-        let URL = ServiceConfig.APIBASE + url;
+        let URL = this.URL + url;
         // console.log('get开始请求URL', URL);
         const TOKEN = localStorage.getItem('token');
         const httpOptions = {
@@ -40,7 +42,8 @@ export class HttpCustormClient {
      * @param headers可选参数设置头
      */
     getFile ( url, cb?: Function ) {
-        let URL = ServiceConfig.APIBASE + url;
+        let URL = this.URL + url;
+
         // console.info(URL);
         const TOKEN = localStorage.getItem('token');
         const headers = {
@@ -79,7 +82,8 @@ export class HttpCustormClient {
      * @title:封装一个post请求数据的
      */
     public post ( url, data?: Object, cb?: Function ) {
-        let URL = ServiceConfig.APIBASE + url;
+        let URL = this.URL + url;
+        // console.info(URL)
         const TOKEN = localStorage.getItem('token');
         const ISLOGIN = localStorage.getItem('isLogin');
         const headers = {
@@ -105,7 +109,8 @@ export class HttpCustormClient {
     }
 
     public put ( url: string, data?: Object, cb?: Function, options?: Object ) {
-        let URL = ServiceConfig.APIBASE + url;
+        let URL = this.URL + url;
+
         // console.log('put:start');
         const TOKEN = localStorage.getItem('token');
         const headers = {
@@ -122,7 +127,8 @@ export class HttpCustormClient {
     }
 
     public delete ( url, cb?: Function, options?: Object ) {
-        let URL = ServiceConfig.APIBASE + url;
+        let URL = this.URL + url;
+
         // console.info('请求地址:' + url);
         const TOKEN = localStorage.getItem('token');
         const headers = {
@@ -144,5 +150,6 @@ export class HttpCustormClient {
             this.router.navigate(['/customAuth/login']);
         }
         console.info('origin error: ', error);
+        alert('网络请求出错!')
     }
 }

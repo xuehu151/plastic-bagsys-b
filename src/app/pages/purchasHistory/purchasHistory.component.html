@@ -1,0 +1,30 @@
+<div class="record">
+    <div class="record-item" *ngFor="let his of withDrawHistory; let i=index;">
+        <div class="record-status">
+            <span class="apply-for"
+                  [ngClass]="{'refuse-status': his.status === 3, 'success-status': his.status === 2}">
+                {{his.status === 1? '已申请':his.status === 3 ?'提现被拒绝':'发货通知'}}
+            </span>
+        </div>
+        <div class="record-status">
+            <span class="name">申请物品：</span>
+            <span>{{his.goodsName}}</span>
+        </div>
+        <div class="record-status" *ngIf="his.trackNum">
+            <span class="name">运单号：</span>
+            <span>{{his.trackNum}}</span>
+        </div>
+        <div class="record-status">
+            <span class="name">申请数量：</span>
+            <span>{{his.count}}（卷）</span>
+        </div>
+        <div class="record-status">
+            <span class="name">地址：</span>
+            <span>{{his.address}}</span>
+        </div>
+        <div class="record-status">
+            <span class="name">备注：</span>
+            <span>{{his.remark}}</span>
+        </div>
+    </div>
+</div>

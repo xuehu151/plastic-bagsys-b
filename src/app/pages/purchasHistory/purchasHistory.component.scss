@@ -13,9 +13,12 @@ body {
 
 .record-status {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: flex-start;
     margin: 8px 0;
+    .name{
+        margin-right: 5px;
+    }
     .apply-for {
         height: 1.3rem;
         color: #fe9b0c;

@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
     userInfo: any;
     source: string = 'wechatMp';
     authUrl: string;
+    hrefUrl: any;
 
     constructor ( private http: HttpCustormClient,
                   private router: Router, ) {
@@ -40,11 +41,10 @@ export class HomeComponent implements OnInit {
 
     thirdPartyBind (): void {
         this.http.get(ServiceConfig.RENDER + this.source + '?type=bind', ( res ) => {
-            console.info('+++++++++++++', res);
             if ( res.code === 10000 ) {
-                this.authUrl = res.data;
-                // window.open(res.data);
-                window.location.href = res.data;
+                // this.authUrl = res.data;
+                // window.open(res.data + '?time='+((new Date()).getTime()));
+                location.href = res.data + '?time='+((new Date()).getTime());
             }
         })
     }
@@ -68,11 +68,11 @@ export class HomeComponent implements OnInit {
     }
 
     goDevice (): void {
-
+        this.router.navigate([ '/device' ]);
     }
 
     purchasingOrder (): void {
-
+        this.router.navigate([ '/purchas' ]);
     }
 
 
