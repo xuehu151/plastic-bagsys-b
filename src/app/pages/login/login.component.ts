@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit{
     }
 
     clearForm(): void{
-
+        this.username = '';
+        this.password = '';
     }
 }
