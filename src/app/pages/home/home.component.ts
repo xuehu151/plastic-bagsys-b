@@ -44,8 +44,7 @@ export class HomeComponent implements OnInit {
             if ( res.code === 10000 ) {
                 this.authUrl = res.data;
                 // window.open(res.data + '?time='+((new Date()).getTime()));
-                // window.location.href = res.data + '?time='+((new Date()).getTime());
-                document.getElementById("alink").click();
+                window.location.href = res.data + '?time='+((new Date()).getTime());
             }
         })
     }
