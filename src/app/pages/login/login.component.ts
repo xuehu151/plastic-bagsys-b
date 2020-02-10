@@ -44,8 +44,12 @@ export class LoginComponent implements OnInit{
         })
     }
 
-    clearForm(): void{
-        this.username = '';
-        this.password = '';
+    clearForm(num): void{
+        if(num === 1){
+            this.username = '';
+        }
+        else {
+            this.password = '';
+        }
     }
 }

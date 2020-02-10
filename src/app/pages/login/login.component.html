@@ -10,7 +10,7 @@
                      class="delete-btn"
                      alt="重置"
                      *ngIf="username"
-                     (click)="clearForm()">
+                     (click)="clearForm(1)">
             </p>
             <p class="form_item">
                 <img src="../../../assets/images/pass.svg" alt="密码">
@@ -21,7 +21,7 @@
                      class="delete-btn"
                      alt="重置"
                      *ngIf="password"
-                     (click)="clearForm()">
+                     (click)="clearForm(2)">
             </p>
             <p class="form_btn">
                 <button (click)="login()">登录</button>

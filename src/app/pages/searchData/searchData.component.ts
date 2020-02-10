@@ -23,10 +23,10 @@ export class SearchDataComponent implements OnInit{
 
     getAgentFund(): void{
         this.http.get(ServiceConfig.AGENTFUND, ( res ) => {
-            console.info(res);
+            // console.info(res);
             if ( res.code === 10000 ) {
                 this.itemData = res.data;
-                this.balance = res.data.balance;
+                this.balance = res.data.balance || '0';
             }
             else {
                 // this.errInfo = res.message;
