@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { HttpCustormClient } from './providers/HttpClient';
 import { HttpClientModule } from '@angular/common/http';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { NgxEchartsModule } from 'ngx-echarts';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -47,6 +48,7 @@ import { KeepTwoDecimalService } from './providers/floatNumberService';
         ReactiveFormsModule,
         BrowserAnimationsModule,
 
+        NgxEchartsModule,
         AppRoutingModule,
         RouterModule.forRoot([])
     ],

@@ -24,24 +24,25 @@ body{
 .current-device{
     width: 100%;
     color: white;
-}
-.current-device span{
-    width: 100%;
-    display: inline-flex;
-    justify-content: center;
-}
-.current-device span:last-child{
-    font-size: 1.2rem;
-    margin-top: 15px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-}
-.current-device span:last-child i{
-    font-size: .8rem;
-}
-.current-device i{
-    font-style: normal;
+    span{
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+    }
+    span:last-child{
+        font-size: 1.2rem;
+        margin-top: 15px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+    span:last-child i{
+        font-size: .8rem;
+    }
+    i{
+        font-style: normal;
+        margin-left: 10px;
+    }
 }
 
 .charts{
@@ -50,7 +51,37 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid red;
+    .echarts-left{
+        width: 60%;
+        height: 100%;
+    }
+    .echarts-right{
+        margin-right: 2rem;
+        .status{
+            margin-bottom: 10px;
+            .title{
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                span{
+                    font-size: .8rem;
+                    font-weight: 500;
+                }
+            }
+            b{
+                width: 10px;
+                height: 10px;
+                display: inline-block;
+                margin-right: 10px;
+            }
+            .success{
+                background: #2a7ffb;
+            }
+            .error{
+                background: #fece00;
+            }
+        }
+    }
 }
 .charts i{
     width: 0;
@@ -63,9 +94,7 @@ body{
     left: calc(50% - 4px);
 }
 .device-info{
-    margin-top: 10px;
     padding: 15px 15px;
-    border: 1px solid gold;
 }
 .title{
     font-weight: 600;

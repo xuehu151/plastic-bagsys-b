@@ -3,68 +3,44 @@
         <div class="current-balance">
             <div class="current-device">
                 <span>当前拥有设备</span>
-                <span>482 <i>(台)</i></span>
+                <span>{{deviceTotal}} <i>(台)</i></span>
             </div>
         </div>
         <div class="charts">
+            <div class="echarts-left" id="echarts-left"></div>
+            <div class="echarts-right">
+                <div class='status'>
+                    <div class="title"><b class="success"></b><span>正常运行</span></div>
+                    <div>{{normalStatusCount}}</div>
+                </div>
+                <div class="status">
+                    <div class="title"><b class="error"></b><span>异常状态</span></div>
+                    <div>{{anomalyStatusCount}}</div>
+                </div>
+            </div>
             <i></i>
         </div>
         <div class="device-info">
             <div class="title">异常设备</div>
-            <div class="panel-info">
+            <div class="panel-info" *ngFor="let list of anomalyList">
                 <div class="list">
                     <span>设备编号</span>
-                    <div>FRUIO-7890</div>
+                    <div>{{list.deviceCode}}</div>
                 </div>
                 <div class="list">
                     <span>管理员</span>
-                    <div>13546598564</div>
+                    <div>{{list.managerPhone}}</div>
                 </div>
                 <div class="list">
                     <span>地址</span>
-                    <div>陕西省榆林市佳县木头渔夫的故事地方单方事故</div>
+                    <div>{{list.address}}</div>
                 </div>
                 <div class="list">
                     <span>异常原因</span>
-                    <div>线路故障!</div>
+                    <div>{{list.abnormalCause}}</div>
                 </div>
             </div>
-            <div class="panel-info">
-                <div class="list">
-                    <span>设备编号</span>
-                    <div>FRUIO-7890</div>
-                </div>
-                <div class="list">
-                    <span>管理员</span>
-                    <div>13546598564</div>
-                </div>
-                <div class="list">
-                    <span>地址</span>
-                    <div>陕西省榆林市佳县木头渔夫的故事地方单方事故</div>
-                </div>
-                <div class="list">
-                    <span>异常原因</span>
-                    <div>线路故障!</div>
-                </div>
-            </div>
-            <div class="panel-info">
-                <div class="list">
-                    <span>设备编号</span>
-                    <div>FRUIO-7890</div>
-                </div>
-                <div class="list">
-                    <span>管理员</span>
-                    <div>13546598564</div>
-                </div>
-                <div class="list">
-                    <span>地址</span>
-                    <div>陕西省榆林市佳县木头渔夫的故事地方单方事故</div>
-                </div>
-                <div class="list">
-                    <span>异常原因</span>
-                    <div>线路故障!</div>
-                </div>
-            </div>
+            <div class="no-data" *ngIf="!anomalyList.length">暂无数据</div>
         </div>
     </div>
 </div>

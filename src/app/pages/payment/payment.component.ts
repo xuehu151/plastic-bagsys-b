@@ -36,7 +36,7 @@ export class PaymentComponent implements OnInit {
             orderSn: this.sn,
         };
         this.http.post(ServiceConfig.PAUMENT, params, ( res ) => {
-            console.info(res);
+            // console.info(res);
             if ( res.code === 10000 ) {
                 // this.router.navigate([ '/purchasHistory' ]);
                 this.onBridgeReady(res.data.appId, res.data.nonceStr, res.data.packageValue, res.data.paySign, res.data.timeStamp);

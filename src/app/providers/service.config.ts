@@ -14,6 +14,7 @@ export class ServiceConfig {
     public static PURCHASEHISTORY = 'biz/order/purchase/find';//采购历史
     public static PLACEORDER = 'biz/order/purchase/add';//下单
     public static PAUMENT = 'biz/pay/add';//支付
+    public static MYDEVICELIST = '/biz/device/myDeviceList';
 
 
 }

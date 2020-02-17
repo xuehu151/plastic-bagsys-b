@@ -12,8 +12,6 @@ import { ServiceConfig } from '../../providers/service.config';
 export class HomeComponent implements OnInit {
     userInfo: any;
     source: string = 'wechatMp';
-    authUrl: string;
-    hrefUrl: any;
 
     constructor ( private http: HttpCustormClient,
                   private router: Router, ) {
@@ -21,32 +19,22 @@ export class HomeComponent implements OnInit {
 
     ngOnInit (): void {
         this.getUserInfo();
+        let loginKey = localStorage.getItem('loginKey');
+        if(loginKey !== 'true'){
+            this.http.get(ServiceConfig.RENDER + this.source + '?type=bind', ( res ) => {
+                if ( res.code === 10000 ) {
+                    // window.open(res.data + '&time='+((new Date()).getTime()));
+                    location.href = res.data + '?time=' + (new Date()).getTime();
+                    location.href = 'https://www.baidu.com/';
+                }
+            })
+        }
     }
 
     getUserInfo (): void {
-        let loginKey = localStorage.getItem('loginKey');
         this.http.get(ServiceConfig.GETUSERINFO, ( res ) => {
-            console.info(res);
             if ( res.code === 10000 ) {
                 this.userInfo = res.data;
-                if(loginKey !== 'true'){
-                    this.thirdPartyBind();
-                }
-            }
-            else {
-                // this.toastr.showToast('danger', '', res.message);
-            }
-        })
-    }
-
-    thirdPartyBind (): void {
-        this.http.get(ServiceConfig.RENDER + this.source + '?type=bind', ( res ) => {
-            if ( res.code === 10000 ) {
-                this.authUrl = res.data;
-                alert(this.authUrl)
-                // window.open(res.data + '?time='+((new Date()).getTime()));
-                location.href = res.data + '?time='+((new Date()).getTime());
-                alert(123456)
             }
         })
     }
