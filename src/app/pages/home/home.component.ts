@@ -22,12 +22,11 @@ export class HomeComponent implements OnInit {
         let loginKey = localStorage.getItem('loginKey');
         if(loginKey !== 'true'){
             this.http.get(ServiceConfig.RENDER + this.source + '?type=bind', ( res ) => {
-                alert(res.code);
+                console.info(res)
                 if ( res.code === 10000 ) {
                     // window.location.href = res.data + '&time=' + (new Date()).getTime();
-                    alert(res.data);
-                    // window.location.href = res.data;
-                    window.location.href = 'https://www.baidu.com/';
+                    window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx1dd5799e4225a2c1&redirect_uri=https%3A%2F%2Fminapp.qudaiji.com%2Fpublic%2Fcallback%2FwechatMp&response_type=code&scope=snsapi_userinfo&state=fc1cd394a5ff1626e5dd8c52ebc5b462#wechat_redirect';
+                    // window.location.href = 'https://www.baidu.com/';
                 }
             })
         }
