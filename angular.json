@@ -25,9 +25,7 @@
                         "styles": [
                             "src/styles.css"
                         ],
-                        "scripts": [
-                            "../node_modules/echarts/dist/echarts.min.js"
-                        ],
+                        "scripts": [],
                         "es5BrowserSupport": true
                     },
                     "configurations": {

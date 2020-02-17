@@ -20,7 +20,7 @@
         "@angular/platform-browser-dynamic": "~7.2.0",
         "@angular/router": "~7.2.0",
         "core-js": "^2.5.4",
-        "echarts": "^4.0.2",
+        "echarts": "^4.2.0-rc.2",
         "ngx-echarts": "^4.0.1",
         "node-sass": "^4.13.1",
         "rxjs": "~6.3.3",
