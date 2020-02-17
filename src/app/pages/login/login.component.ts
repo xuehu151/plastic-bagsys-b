@@ -20,7 +20,6 @@ export class LoginComponent implements OnInit{
 
     ngOnInit (): void {
         let url = location.search;
-        localStorage.removeItem('loginKey');
         if(url){
             let token = url.split('?')[1].split('=')[1];
             localStorage.setItem('loginKey', 'true');
@@ -35,6 +34,7 @@ export class LoginComponent implements OnInit{
             password: this.password
         }, ( res ) => {
             if ( res.code === 10000 ) {
+                localStorage.removeItem('loginKey');
                 localStorage.setItem('isLogin', 'true');
                 localStorage.setItem('token', res.data.token);
                 this.router.navigate([ '/home' ]);

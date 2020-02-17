@@ -20,10 +20,13 @@ export class HomeComponent implements OnInit {
     ngOnInit (): void {
         this.getUserInfo();
         let loginKey = localStorage.getItem('loginKey');
+        alert('+++++++++++++'+loginKey);
         if(loginKey !== 'true'){
             this.http.get(ServiceConfig.RENDER + this.source + '?type=bind', ( res ) => {
+                alert('*********'+res);
                 if ( res.code === 10000 ) {
-                    location.href = res.data + '&time=' + (new Date()).getTime();
+                    // window.location.href = res.data + '&time=' + (new Date()).getTime();
+                    window.location.href = res.data;
                     // window.location.href = 'https://www.baidu.com/';
                 }
             })
