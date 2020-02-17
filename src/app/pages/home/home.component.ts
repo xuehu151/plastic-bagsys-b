@@ -26,7 +26,9 @@ export class HomeComponent implements OnInit {
                 if ( res.code === 10000 ) {
                     // window.location.href = res.data + '&time=' + (new Date()).getTime();
                     location.href = res.data + '&time=' + (new Date()).getTime();
-                    alert(location.href);
+                    setTimeout( () => {
+                        alert(location.href);
+                    },1000)
                     // window.location.href = 'https://www.baidu.com/';
                 }
             })
