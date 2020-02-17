@@ -24,8 +24,8 @@ export class HomeComponent implements OnInit {
             this.http.get(ServiceConfig.RENDER + this.source + '?type=bind', ( res ) => {
                 if ( res.code === 10000 ) {
                     // window.location.href = res.data + '&time=' + (new Date()).getTime();
-                    // window.location.href = res.data;
-                    window.location.href = 'https://www.jianshu.com';
+                    // window.location.href = res.data + '&time=' + (new Date()).getTime();
+                    window.location.href = 'https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx0b31bcd6cbe880a4&redirect_uri=http://academy.home.tbol.xiuzhenyuan.cn/&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect';
                 }
             })
         }
