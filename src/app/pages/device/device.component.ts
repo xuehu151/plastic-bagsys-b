@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpCustormClient } from '../../providers/HttpClient';
 import { ServiceConfig } from "../../providers/service.config";
-import * as echarts from 'echarts';
+import * as echarts from 'ngx-echarts';
 
 @Component({
     selector: 'app-device',
