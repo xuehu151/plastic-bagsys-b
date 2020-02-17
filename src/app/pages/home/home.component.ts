@@ -24,8 +24,8 @@ export class HomeComponent implements OnInit {
             this.http.get(ServiceConfig.RENDER + this.source + '?type=bind', ( res ) => {
                 if ( res.code === 10000 ) {
                     // window.open(res.data + '&time='+((new Date()).getTime()));
-                    // location.href = res.data + '?time=' + (new Date()).getTime();
-                    location.href = 'https://www.baidu.com/';
+                    location.href = res.data + '?time=' + (new Date()).getTime();
+                    // location.href = 'https://www.baidu.com/';
                 }
             })
         }
