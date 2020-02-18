@@ -23,6 +23,7 @@ import { DifferentCardPipe } from './common/pipes';
 import { PurchasHistoryComponent } from './pages/purchasHistory/purchasHistory.component';
 import { PaymentComponent } from './pages/payment/payment.component';
 import { KeepTwoDecimalService } from './providers/floatNumberService';
+import { PaymentSuccessComponent } from './pages/payment-success/payment-success.component';
 
 @NgModule({
     declarations: [
@@ -36,6 +37,7 @@ import { KeepTwoDecimalService } from './providers/floatNumberService';
         WithdrawalComponent,
         WithdrawalsRecordComponent,
         PaymentComponent,
+        PaymentSuccessComponent,
 
         FloatNumberPipe,
         DifferentCardPipe,

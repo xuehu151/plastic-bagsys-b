@@ -11,13 +11,13 @@ import { ServiceConfig } from "../../providers/service.config";
 
 export class WithdrawalComponent implements OnInit {
     balance: string = '';
-    freezeBalance: string = '0.00';
-    amount: string = '1';
-    bankName: string = '张三';
-    bankPhone: string = '13072923458';
-    idCard: string = '610222199009200380';
-    bankAccount: string = '北京银行';
-    bankCard: string = '622255455854451';
+    freezeBalance: string = '0';
+    amount: string = '';
+    bankName: string = '';
+    bankPhone: string = '';
+    idCard: string = '';
+    bankAccount: string = '';
+    bankCard: string = '';
     submitBtn: boolean = true;
 
     constructor ( private activeRoute: ActivatedRoute,

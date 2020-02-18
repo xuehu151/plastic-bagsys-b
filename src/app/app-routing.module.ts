@@ -9,6 +9,7 @@ import { WithdrawalComponent } from "./pages/withdrawal/withdrawal.component";
 import { WithdrawalsRecordComponent } from "./pages/withdrawalsRecord/withdrawalsRecord.component";
 import { PurchasHistoryComponent } from './pages/purchasHistory/purchasHistory.component';
 import { PaymentComponent } from './pages/payment/payment.component';
+import { PaymentSuccessComponent } from './pages/payment-success/payment-success.component';
 
 const routes: Routes = [
         {
@@ -46,6 +47,10 @@ const routes: Routes = [
         {
             path: 'payment',
             component: PaymentComponent
+        },
+        {
+            path: 'payment-success',
+            component: PaymentSuccessComponent
         },
         {
             path: '',

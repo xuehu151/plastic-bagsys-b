@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HttpCustormClient } from '../../providers/HttpClient';
 import { ServiceConfig } from "../../providers/service.config";
 import { KeepTwoDecimalService } from '../../providers/floatNumberService';
-declare let WeixinJSBridge : any;
+declare let WeixinJSBridge: any;
 
 @Component({
     selector: 'app-payment',
@@ -47,7 +47,7 @@ export class PaymentComponent implements OnInit {
         })
     }
 
-    onBridgeReady (appId, nonceStr, packageValue, paySign, timeStamp) {
+    onBridgeReady ( appId, nonceStr, packageValue, paySign, timeStamp ) {
         WeixinJSBridge.invoke(
             'getBrandWCPayRequest', {
                 "appId": appId,
@@ -58,17 +58,16 @@ export class PaymentComponent implements OnInit {
                 "timeStamp": timeStamp
             },
             function ( res ) {
-                alert('err_code'+res.err_code);
-                alert('err_desc'+res.err_desc);
-                alert('err_msg'+res.err_msg);
-                console.info('支付参数',res);
-                console.log(res.err_code + "  " + res.err_desc + "  " + res.err_msg);
                 if ( res.err_msg == "get_brand_wcpay_request:ok" ) {
-                    alert("充值成功");
+                    this.router.navigate([ '/payment-success' ], {
+                        queryParams: {
+                            money: this.totalMoney,
+                            consignee: this.consignee
+                        }
+                    });
                 }
                 else if ( res.err_msg == "get_brand_wcpay_request:cancel" ) {
                     alert("用户取消支付");
-
                 }
                 else if ( res.err_msg == "get_brand_wcpay_request:fail" ) {
                     alert("支付失败");

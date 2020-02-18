@@ -11,12 +11,12 @@ import { ServiceConfig } from "../../providers/service.config";
 
 export class PurchasComponent implements OnInit{
     goodsList: Array<any> = [];
-    count: number = 3;
-    goodId: string = '2';
-    consignee: string = '张某人';
-    signeeMobile: string = '13072923459';
-    address: string = '浙江省杭州市';
-    remark: string = '请尽快安排发货，谢谢';
+    count: number = 0;
+    goodId: string = '';
+    consignee: string = '';
+    signeeMobile: string = '';
+    address: string = '';
+    remark: string = '';
     payBtn: boolean = true;
 
     constructor (  private http: HttpCustormClient,
@@ -72,7 +72,7 @@ export class PurchasComponent implements OnInit{
             remark: this.remark
         };
         this.http.post(ServiceConfig.PLACEORDER, params, ( res ) => {
-            console.info(res);
+            // console.info(res);
             if ( res.code === 10000 ) {
                 let item = {
                     sn: res.data.sn,

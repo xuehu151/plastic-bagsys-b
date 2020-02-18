@@ -1,0 +1,47 @@
+.pay-status {
+    height: calc(100% - 2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .image {
+        img {
+            width: 30vw;
+        }
+    }
+    .desc {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .pay-status-desc {
+            color: black;
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 2px 2px;
+        }
+        .pay-money {
+            color: black;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 2px 2px;
+            display: inline-flex;
+            align-items: flex-end;
+            margin-bottom: 1rem;
+            i {
+                color: black;
+                font-size: .8rem;
+                font-style: normal;
+            }
+        }
+        span {
+            display: inline-flex;
+            font-size: .9rem;
+            color: #a6a6a6;
+            i{
+                font-style: normal;
+                color: red;
+            }
+        }
+    }
+}
