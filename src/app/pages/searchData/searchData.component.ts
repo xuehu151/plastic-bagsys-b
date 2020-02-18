@@ -12,6 +12,12 @@ import { ServiceConfig } from "../../providers/service.config";
 export class SearchDataComponent implements OnInit{
     balance: string = '';
     itemData: any;
+    orderDetail = {
+        orderTotalCount: 0,
+        revenueTotalCount: 0,
+        todayOrderCount: 0,
+        todayRevenueCount: 0,
+    };
 
     constructor ( private http: HttpCustormClient,
                   private router: Router, ) {
@@ -19,6 +25,7 @@ export class SearchDataComponent implements OnInit{
 
     ngOnInit (): void {
         this.getAgentFund();
+        this.getOrderDetail();
     }
 
     getAgentFund(): void{
@@ -40,6 +47,20 @@ export class SearchDataComponent implements OnInit{
                 data: JSON.stringify(this.itemData)
             }
         });
+    }
+
+    getOrderDetail(): void{
+        this.http.get(ServiceConfig.ORDERDETAIL, ( res ) => {
+            // console.info(res);
+            if ( res.code === 10000 ) {
+                this.orderDetail = {
+                    orderTotalCount: res.data.orderTotalCount,
+                    revenueTotalCount: res.data.revenueTotalCount,
+                    todayOrderCount: res.data.todayOrderCount,
+                    todayRevenueCount: res.data.todayRevenueCount,
+                }
+            }
+        })
     }
 
 }

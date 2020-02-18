@@ -15,6 +15,7 @@ export class ServiceConfig {
     public static PLACEORDER = 'biz/order/purchase/add';//下单
     public static PAUMENT = 'biz/pay/add';//支付
     public static MYDEVICELIST = '/biz/device/myDeviceList';
+    public static ORDERDETAIL = '/biz/device/myCount';
 
 
 }

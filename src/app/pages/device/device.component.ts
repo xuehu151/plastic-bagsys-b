@@ -27,7 +27,7 @@ export class DeviceComponent implements OnInit {
 
     getDeviceList (): void {
         this.http.get(ServiceConfig.MYDEVICELIST, ( res ) => {
-            console.info(res);
+            // console.info(res);
             if ( res.code === 10000 ) {
                 this.anomalyList = res.data.anomalyList;
                 this.deviceTotal = res.data.deviceTotal;
