@@ -48,6 +48,7 @@ export class PaymentComponent implements OnInit {
     }
 
     onBridgeReady ( appId, nonceStr, packageValue, paySign, timeStamp ) {
+        let self = this;
         WeixinJSBridge.invoke(
             'getBrandWCPayRequest', {
                 "appId": appId,
@@ -59,13 +60,12 @@ export class PaymentComponent implements OnInit {
             },
             function ( res ) {
                 if ( res.err_msg == "get_brand_wcpay_request:ok" ) {
-                    this.router.navigate([ '/payment-success' ], {
+                    self.router.navigate([ '/payment-success' ], {
                         queryParams: {
-                            money: this.totalMoney,
-                            consignee: this.consignee
+                            money: self.totalMoney,
+                            consignee: self.consignee
                         }
                     });
-                    alert( res.err_msg );
                 }
                 else if ( res.err_msg == "get_brand_wcpay_request:cancel" ) {
                     alert("用户取消支付");
