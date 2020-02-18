@@ -48,6 +48,11 @@ export class PaymentComponent implements OnInit {
     }
 
     onBridgeReady (appId, nonceStr, packageValue, paySign, timeStamp) {
+        alert(appId);
+        alert(nonceStr);
+        alert(packageValue);
+        alert(paySign);
+        alert(timeStamp);
         WeixinJSBridge.invoke(
             'getBrandWCPayRequest', {
                 "appId": appId,
