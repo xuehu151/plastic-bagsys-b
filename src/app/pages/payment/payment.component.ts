@@ -57,6 +57,7 @@ export class PaymentComponent implements OnInit {
                 "timeStamp": timeStamp
             },
             function ( res ) {
+                console.info('支付参数',res);
                 console.log(res.err_code + "  " + res.err_desc + "  " + res.err_msg);
                 if ( res.err_msg == "get_brand_wcpay_request:ok" ) {
                     alert("充值成功");
