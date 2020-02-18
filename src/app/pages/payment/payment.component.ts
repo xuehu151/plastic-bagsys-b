@@ -65,6 +65,7 @@ export class PaymentComponent implements OnInit {
                             consignee: this.consignee
                         }
                     });
+                    alert( res.err_msg );
                 }
                 else if ( res.err_msg == "get_brand_wcpay_request:cancel" ) {
                     alert("用户取消支付");
