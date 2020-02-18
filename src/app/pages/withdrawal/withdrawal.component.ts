@@ -11,7 +11,7 @@ import { ServiceConfig } from "../../providers/service.config";
 
 export class WithdrawalComponent implements OnInit {
     balance: string = '';
-    freezeBalance: string = '0';
+    freezeBalance: string = '';
     amount: string = '';
     bankName: string = '';
     bankPhone: string = '';
