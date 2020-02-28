@@ -27,7 +27,9 @@ export class WithdrawalsRecordComponent implements OnInit{
         let params = {
             currPage: this.currPage,
             pageSize: this.pageSize,
-            entity: {},
+            entity: {
+                timeSort: 2
+            },
         };
         this.http.post(ServiceConfig.WITHDRAWHIS, params, ( res ) => {
             console.info(res);
