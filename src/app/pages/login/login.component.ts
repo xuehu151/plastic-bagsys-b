@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit{
                 this.router.navigate([ '/home' ]);
             }
             else {
-                // this.errInfo = res.message;
+                alert(res.message)
             }
         })
     }
