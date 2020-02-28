@@ -58,7 +58,7 @@ export class WithdrawalComponent implements OnInit {
             alert('输入金额必须为正数!');
             return false
         }
-        else if ( !regName.test(this.bankName) ) {
+        else if ( !regName.test(this.bankAccount) ) {
             alert('真实姓名填写有误!');
             return false
         }
@@ -70,7 +70,7 @@ export class WithdrawalComponent implements OnInit {
             alert('身份证号填写有误!');
             return false
         }
-        else if ( !regName.test(this.bankAccount) ) {
+        else if ( !regName.test(this.bankName) ) {
             alert('开户行填写有误!');
             return false
         }
