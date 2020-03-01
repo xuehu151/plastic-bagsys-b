@@ -68,7 +68,7 @@ export class DeviceComponent implements OnInit {
                             position: 'left'
                         },
                         emphasis: {
-                            show: true,
+                            show: false,
                             textStyle: {
                                 fontSize: '16',
                                 fontWeight: 'bold'
