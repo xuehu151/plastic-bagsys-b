@@ -70,7 +70,7 @@ export class DeviceComponent implements OnInit {
                         emphasis: {
                             show: true,
                             textStyle: {
-                                fontSize: '30',
+                                fontSize: '16',
                                 fontWeight: 'bold'
                             }
                         }
