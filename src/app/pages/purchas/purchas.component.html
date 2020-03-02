@@ -29,6 +29,7 @@
             <label>申请数量(卷)</label>
             <input type="number"
                    [(ngModel)]="count"
+                   onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')"
                    (ngModelChange)="changeForm()"
                    placeholder="请输入申请数量">
         </div>
@@ -37,14 +38,14 @@
             <input type="text"
                    [(ngModel)]="consignee"
                    (ngModelChange)="changeForm()"
-                   placeholder="请输入提现人姓名">
+                   placeholder="请输入收货人">
         </div>
         <div class="form-item">
             <label>收货人电话</label>
             <input type="text"
                    [(ngModel)]="signeeMobile"
                    (ngModelChange)="changeForm()"
-                   placeholder="请输入相应手机号">
+                   placeholder="请输入收货人电话">
         </div>
         <div class="form-item">
             <label>收货地址</label>

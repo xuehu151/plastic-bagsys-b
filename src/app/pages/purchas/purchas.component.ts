@@ -11,7 +11,7 @@ import { ServiceConfig } from "../../providers/service.config";
 
 export class PurchasComponent implements OnInit{
     goodsList: Array<any> = [];
-    count: number = 0;
+    count: number;
     goodId: string = '';
     consignee: string = '';
     signeeMobile: string = '';
