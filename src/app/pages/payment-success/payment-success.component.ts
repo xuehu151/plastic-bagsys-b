@@ -25,9 +25,7 @@ export class PaymentSuccessComponent implements OnInit{
             this.payStatus = {
                 money: this.keepTwoDecimal.keepTwoDecimalFull(params.money) || '0',
                 consignee: params.consignee || ''
-            };
-            alert(params.consignee);
-            alert(this.keepTwoDecimal.keepTwoDecimalFull(params.money));
+            }
         });
     }
 
