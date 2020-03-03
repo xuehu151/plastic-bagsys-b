@@ -59,7 +59,7 @@ export class PaymentComponent implements OnInit {
                 "timeStamp": timeStamp
             },
             function ( res ) {
-                console.info('res',res);
+                alert("支付成功!");
                 if ( res.err_msg == "get_brand_wcpay_request:ok" ) {
                     self.router.navigate([ '/payment-success' ], {
                         queryParams: {

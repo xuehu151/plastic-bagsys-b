@@ -43,7 +43,6 @@ export class PurchasComponent implements OnInit{
     }
 
     referTo(): any{
-        this.router.navigate([ '/payment-success' ]);
         if ( !this.goodId ) {
             alert('物品种类填写有误!');
             return false
