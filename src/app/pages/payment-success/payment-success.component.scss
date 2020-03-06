@@ -46,7 +46,7 @@
         }
     }
     .pay-btn {
-        width: 100%;
+        width: calc(100% - 30px);
         height: 74px;
         display: flex;
         justify-content: center;
