@@ -21,7 +21,6 @@ export class PaymentSuccessComponent implements OnInit{
     }
 
     ngOnInit (): void {
-        document.execCommand('Refresh');
         this.activeRoute.queryParams.subscribe(params => {
             this.payStatus = {
                 money: this.keepTwoDecimal.keepTwoDecimalFull(params.money) || '0',
@@ -30,5 +29,9 @@ export class PaymentSuccessComponent implements OnInit{
         });
     }
 
+
+    gohome():void{
+        this.router.navigate([ '/home' ]);
+    }
 
 }
