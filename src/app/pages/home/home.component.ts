@@ -14,12 +14,14 @@ export class HomeComponent implements OnInit {
     source: string = 'wechatMp';
     loading: boolean = false;
     loadingText: string = '授权中...';
+    authUrl: string;
 
     constructor ( private http: HttpCustormClient,
                   private router: Router, ) {
     }
 
     ngOnInit (): void {
+        this.authUrl = location.search;
         this.getUserInfo();
         let loginKey = localStorage.getItem('loginKey');
         if ( loginKey !== 'true' ) {
@@ -27,14 +29,6 @@ export class HomeComponent implements OnInit {
                 if ( res.code === 10000 ) {
                     // window.location.href = res.data + '&time=' + (new Date()).getTime();
                     window.location.href = res.data + '&time=' + (new Date()).getTime();
-                    this.loading = true;
-                    let timer = setInterval(() => {
-                        let url = location.search;
-                        if ( url ) {
-                            clearInterval(timer);
-                            this.loading = false;
-                        }
-                    }, 1000);
                 }
             })
         }
@@ -63,15 +57,30 @@ export class HomeComponent implements OnInit {
      }*/
 
     searchData (): void {
-        this.router.navigate([ '/searchData' ]);
+        if( this.authUrl ){
+            this.router.navigate([ '/searchData' ]);
+        }
+        else {
+            alert('授权中...');
+        }
     }
 
     goDevice (): void {
-        this.router.navigate([ '/device' ]);
+        if( this.authUrl ){
+            this.router.navigate([ '/device' ]);
+        }
+        else {
+            alert('授权中...');
+        }
     }
 
     purchasingOrder (): void {
-        this.router.navigate([ '/purchas' ]);
+        if( this.authUrl ){
+            this.router.navigate([ '/purchas' ]);
+        }
+        else {
+            alert('授权中...');
+        }
     }
 
 
