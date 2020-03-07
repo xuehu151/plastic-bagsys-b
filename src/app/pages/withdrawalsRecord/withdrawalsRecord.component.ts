@@ -10,7 +10,7 @@ import { ServiceConfig } from "../../providers/service.config";
 })
 export class WithdrawalsRecordComponent implements OnInit{
     currPage: number = 1;
-    pageSize: number = 15;
+    pageSize: number = 200;
     totalCount: number = 0;
     totalPage: number = 0;
     withDrawHistory: Array<any> = [];

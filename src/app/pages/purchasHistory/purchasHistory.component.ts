@@ -11,7 +11,7 @@ import { ServiceConfig } from "../../providers/service.config";
 
 export class PurchasHistoryComponent implements OnInit{
     currPage: number = 1;
-    pageSize: number = 100;
+    pageSize: number = 200;
     totalCount: number = 0;
     totalPage: number = 0;
     withDrawHistory: Array<any> = [];

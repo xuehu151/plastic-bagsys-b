@@ -60,7 +60,8 @@ export class PaymentComponent implements OnInit {
             },
             function ( res ) {
                 if ( res.err_msg == "get_brand_wcpay_request:ok" ) {
-                    self.router.navigate([ '/payment-success' ]);
+                    // self.router.navigate([ '/payment-success' ]);
+                    window.location.href = ServiceConfig.APIBASE + '#/payment-success';
                 }
                 else if ( res.err_msg == "get_brand_wcpay_request:cancel" ) {
                     alert("用户取消支付");
