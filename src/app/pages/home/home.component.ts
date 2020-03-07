@@ -12,6 +12,8 @@ import { ServiceConfig } from '../../providers/service.config';
 export class HomeComponent implements OnInit {
     userInfo: any;
     source: string = 'wechatMp';
+    loading: boolean = false;
+    loadingText: string = '授权中...';
 
     constructor ( private http: HttpCustormClient,
                   private router: Router, ) {
@@ -20,11 +22,19 @@ export class HomeComponent implements OnInit {
     ngOnInit (): void {
         this.getUserInfo();
         let loginKey = localStorage.getItem('loginKey');
-        if(loginKey !== 'true'){
+        if ( loginKey !== 'true' ) {
             this.http.get(ServiceConfig.RENDER + this.source + '?type=bind', ( res ) => {
                 if ( res.code === 10000 ) {
                     // window.location.href = res.data + '&time=' + (new Date()).getTime();
+                    this.loading = true;
                     window.location.href = res.data + '&time=' + (new Date()).getTime();
+                    let timer = setInterval(() => {
+                        let url = location.search;
+                        if ( url ) {
+                            clearInterval(timer);
+                            this.loading = false;
+                        }
+                    }, 1000);
                 }
             })
         }
@@ -38,19 +48,19 @@ export class HomeComponent implements OnInit {
         })
     }
 
-   /* GetRequest () {
-        let url = window.location.search;
-        console.info('*********',url);
-        let theRequest = {};
-        if ( url.indexOf("?") != -1 ) {
-            let str = url.substr(1);
-            let strs = str.split("&");
-            for ( let i = 0; i < strs.length; i++ ) {
-                theRequest[ strs[ i ].split("=")[ 0 ] ] = unescape(strs[ i ].split("=")[ 1 ]);
-            }
-        }
-        return theRequest;
-    }*/
+    /* GetRequest () {
+     let url = window.location.search;
+     console.info('*********',url);
+     let theRequest = {};
+     if ( url.indexOf("?") != -1 ) {
+     let str = url.substr(1);
+     let strs = str.split("&");
+     for ( let i = 0; i < strs.length; i++ ) {
+     theRequest[ strs[ i ].split("=")[ 0 ] ] = unescape(strs[ i ].split("=")[ 1 ]);
+     }
+     }
+     return theRequest;
+     }*/
 
     searchData (): void {
         this.router.navigate([ '/searchData' ]);

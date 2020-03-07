@@ -44,3 +44,63 @@
     margin-left: .5rem;
     cursor: pointer;
 }
+
+.keep-out {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(23, 21, 45, .5);
+    .loding-ani {
+        display: inline-block;
+        width: 50rem;
+        height: 10rem;
+        text-align: center;
+        line-height: 3;
+        p {
+            font-size: 1.5rem;
+            color: #4cf52f;
+        }
+        .loading {
+            display: inline-block;
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            border: 5px solid #BEBEBE;
+            border-left: 5px solid #4cf52f;
+            animation: load 1s linear infinite;
+            -moz-animation: load 1s linear infinite;
+            -webkit-animation: load 1s linear infinite;
+            -o-animation: load 1s linear infinite;
+        }
+        @-webkit-keyframes load {
+            from {
+                -webkit-transform: rotate(0deg);
+            }
+            to {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        @-moz-keyframes load {
+            from {
+                -moz-transform: rotate(0deg);
+            }
+            to {
+                -moz-transform: rotate(360deg);
+            }
+        }
+        @-o-keyframes load {
+            from {
+                -o-transform: rotate(0deg);
+            }
+            to {
+                -o-transform: rotate(360deg);
+            }
+        }
+    }
+}
