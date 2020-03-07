@@ -26,8 +26,8 @@ export class HomeComponent implements OnInit {
             this.http.get(ServiceConfig.RENDER + this.source + '?type=bind', ( res ) => {
                 if ( res.code === 10000 ) {
                     // window.location.href = res.data + '&time=' + (new Date()).getTime();
-                    this.loading = true;
                     window.location.href = res.data + '&time=' + (new Date()).getTime();
+                    this.loading = true;
                     let timer = setInterval(() => {
                         let url = location.search;
                         if ( url ) {
