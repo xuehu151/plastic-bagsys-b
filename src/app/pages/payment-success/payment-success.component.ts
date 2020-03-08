@@ -30,11 +30,7 @@ export class PaymentSuccessComponent implements OnInit{
 
 
     gohome():void{
-        this.router.navigate([ '/home' ], {
-            queryParams: {
-                pages: 1
-            }
-        });
+        this.router.navigate([ '/home' ]);
     }
 
 }
