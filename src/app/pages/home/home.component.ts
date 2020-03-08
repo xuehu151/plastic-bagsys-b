@@ -21,12 +21,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     ngOnInit (): void {
-        this.activeRoute.queryParams.subscribe(params => {
-            if(JSON.stringify(params) !== '{}'){
-                this.pages = params['pages'];
-            }
-            alert(params)
-        });
         this.authUrl = location.search;
         this.getUserInfo();
         let loginKey = localStorage.getItem('loginKey');
@@ -38,6 +32,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 }
             })
         }
+        setTimeout( () => {
+            this.activeRoute.queryParams.subscribe(params => {
+                if(JSON.stringify(params) !== '{}'){
+                    this.pages = params['pages'];
+                }
+            });
+            alert(123)
+        }, 1000)
     }
 
     ngAfterViewInit(){
