@@ -13,22 +13,24 @@ export class HomeComponent implements OnInit {
     userInfo: any;
     source: string = 'wechatMp';
     authUrl: string;
-    pages: string;
+    sign: string;
 
     constructor ( private http: HttpCustormClient,
                   private activeRoute: ActivatedRoute,
                   private zone:NgZone,
                   private router: Router, ) {
         this.zone.run(() => {
-            this.activeRoute.queryParams.subscribe(params => {
-                if(JSON.stringify(params) !== '{}'){
-                    this.pages = params['pages'];
-                }
-            });
+          this.sign = sessionStorage.getItem('sign');
+            // this.activeRoute.queryParams.subscribe(params => {
+            //     if(JSON.stringify(params) !== '{}'){
+            //         this.pages = params['pages'];
+            //     }
+            // });
         });
     }
 
     ngOnInit (): void {
+        sessionStorage.removeItem('sign');
         this.authUrl = location.search;
         this.getUserInfo();
         let loginKey = localStorage.getItem('loginKey');
@@ -65,7 +67,7 @@ export class HomeComponent implements OnInit {
      }*/
 
     searchData (): void {
-        if( this.authUrl || this.pages === '1' ){
+        if( this.authUrl || this.sign === 'true' ){
             this.router.navigate([ '/searchData' ]);
         }
         else {
@@ -74,7 +76,7 @@ export class HomeComponent implements OnInit {
     }
 
     goDevice (): void {
-        if( this.authUrl || this.pages === '1'  ){
+        if( this.authUrl || this.sign === 'true'  ){
             this.router.navigate([ '/device' ]);
         }
         else {
@@ -83,8 +85,7 @@ export class HomeComponent implements OnInit {
     }
 
     purchasingOrder (): void {
-        alert(this.pages);
-        if( this.authUrl || this.pages === '1'  ){
+        if( this.authUrl || this.sign === 'true'  ){
             this.router.navigate([ '/purchas' ]);
         }
         else {

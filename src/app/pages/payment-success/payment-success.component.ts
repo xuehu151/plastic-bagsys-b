@@ -18,22 +18,21 @@ export class PaymentSuccessComponent implements OnInit{
                    private zone:NgZone,
                    private keepTwoDecimal: KeepTwoDecimalService,
                    private router: Router, ) {
-        this.zone.run(() => {
-            this.activeRoute.queryParams.subscribe(params => {
-                this.payStatus = {
-                    money: this.keepTwoDecimal.keepTwoDecimalFull(params.money) || '0',
-                    consignee: params.consignee || ''
-                }
-            });
-        });
+        this.zone.run(() => { });
     }
 
     ngOnInit (): void {
-
+        this.activeRoute.queryParams.subscribe(params => {
+            this.payStatus = {
+                money: this.keepTwoDecimal.keepTwoDecimalFull(params.money) || '0',
+                consignee: params.consignee || ''
+            }
+        });
     }
 
 
     gohome():void{
+        sessionStorage.setItem('sign', 'true');
         this.router.navigate([ '/home' ]);
     }
 
