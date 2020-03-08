@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
      }*/
 
     searchData (): void {
-        if( this.authUrl || this.pages === 1 ){
+        if( this.authUrl || this.pages === '1' ){
             this.router.navigate([ '/searchData' ]);
         }
         else {
@@ -72,7 +72,7 @@ export class HomeComponent implements OnInit {
     }
 
     goDevice (): void {
-        if( this.authUrl || this.pages === 1  ){
+        if( this.authUrl || this.pages === '1'  ){
             this.router.navigate([ '/device' ]);
         }
         else {
@@ -81,7 +81,7 @@ export class HomeComponent implements OnInit {
     }
 
     purchasingOrder (): void {
-        if( this.authUrl || this.pages === 1  ){
+        if( this.authUrl || this.pages === '1'  ){
             this.router.navigate([ '/purchas' ]);
         }
         else {
