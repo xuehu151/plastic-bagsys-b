@@ -32,9 +32,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 }
             })
         }
-    }
-
-    ngAfterViewInit(){
         this.activeRoute.queryParams.subscribe(params => {
             if(JSON.stringify(params) !== '{}'){
                 this.pages = params['pages'];
@@ -42,6 +39,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
             alert(this.pages);
             alert(typeof this.pages)
         });
+    }
+
+    ngAfterViewInit(){
         window.addEventListener('pageshow', function (e) {
             if(e.persisted || (window.performance && window.performance.navigation.type == 2)){
                 window.location.reload()
@@ -72,6 +72,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
      }*/
 
     searchData (): void {
+        alert(this.pages);
+
         if( this.authUrl || this.pages === '1' ){
             this.router.navigate([ '/searchData' ]);
         }
