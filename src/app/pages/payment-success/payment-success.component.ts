@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { HttpCustormClient } from '../../providers/HttpClient';
 import { KeepTwoDecimalService } from '../../providers/floatNumberService';
 
 @Component({
@@ -31,7 +30,11 @@ export class PaymentSuccessComponent implements OnInit{
 
 
     gohome():void{
-        this.router.navigate([ '/home' ]);
+        this.router.navigate([ '/home' ], {
+            queryParams: {
+                pages: 1
+            }
+        });
     }
 
 }

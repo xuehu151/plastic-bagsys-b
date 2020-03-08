@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,  ActivatedRoute} from '@angular/router';
 import { HttpCustormClient } from '../../providers/HttpClient';
 import { ServiceConfig } from '../../providers/service.config';
 
@@ -12,11 +12,11 @@ import { ServiceConfig } from '../../providers/service.config';
 export class HomeComponent implements OnInit {
     userInfo: any;
     source: string = 'wechatMp';
-    loading: boolean = false;
-    loadingText: string = '授权中...';
     authUrl: string;
+    pages: number;
 
     constructor ( private http: HttpCustormClient,
+                  private activeRoute: ActivatedRoute,
                   private router: Router, ) {
     }
 
@@ -32,6 +32,10 @@ export class HomeComponent implements OnInit {
                 }
             })
         }
+        this.activeRoute.queryParams.subscribe(params => {
+            console.info(params)
+            // if(){}
+        });
     }
 
     getUserInfo (): void {
@@ -57,7 +61,7 @@ export class HomeComponent implements OnInit {
      }*/
 
     searchData (): void {
-        if( this.authUrl ){
+        if( this.authUrl || this.pages ){
             this.router.navigate([ '/searchData' ]);
         }
         else {
@@ -66,7 +70,7 @@ export class HomeComponent implements OnInit {
     }
 
     goDevice (): void {
-        if( this.authUrl ){
+        if( this.authUrl || this.pages  ){
             this.router.navigate([ '/device' ]);
         }
         else {
@@ -75,7 +79,7 @@ export class HomeComponent implements OnInit {
     }
 
     purchasingOrder (): void {
-        if( this.authUrl ){
+        if( this.authUrl || this.pages  ){
             this.router.navigate([ '/purchas' ]);
         }
         else {
