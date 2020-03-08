@@ -35,6 +35,7 @@ export class HomeComponent implements OnInit {
         this.activeRoute.queryParams.subscribe(params => {
             if(JSON.stringify(params) !== '{}'){
                 this.pages = params['pages'];
+                console.info(this.pages)
             }
         });
     }
