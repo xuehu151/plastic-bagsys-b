@@ -2,7 +2,7 @@
     <div class="record-item" *ngFor="let his of withDrawHistory; let i=index;">
         <div class="record-status">
             <span class="apply-for"
-                  [ngClass]="{'refuse-status': his.status === 3, 'success-status': his.status === 2}">
+                  [ngClass]="{'refuse-status': his.status === 3, 'send-goods': his.status === 1}">
                 {{his.status === 1? '已申请':his.status === 3 ?'已发货':'待发货'}}
             </span>
         </div>
