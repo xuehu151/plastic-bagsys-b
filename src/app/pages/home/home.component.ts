@@ -57,6 +57,7 @@ export class HomeComponent implements OnInit {
      }*/
 
     searchData (): void {
+        alert(this.authUrl)
         if( this.authUrl ){
             this.router.navigate([ '/searchData' ]);
         }
