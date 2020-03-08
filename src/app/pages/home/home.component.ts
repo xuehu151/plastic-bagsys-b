@@ -32,21 +32,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 }
             })
         }
-        this.activeRoute.queryParams.subscribe(params => {
-            if(JSON.stringify(params) !== '{}'){
-                this.pages = params['pages'];
-            }
-            alert(this.pages);
-            alert(typeof this.pages)
-        });
+        setTimeout( () => {
+            this.activeRoute.queryParams.subscribe(params => {
+                if(JSON.stringify(params) !== '{}'){
+                    this.pages = params['pages'];
+                }
+            });
+        }, 500)
     }
 
     ngAfterViewInit(){
-        window.addEventListener('pageshow', function (e) {
-            if(e.persisted || (window.performance && window.performance.navigation.type == 2)){
-                window.location.reload()
-            }
-        });
     }
 
     getUserInfo (): void {
