@@ -21,15 +21,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
         this.router.routeReuseStrategy.shouldReuseRoute = function() {
             return false;
         };
-    }
-
-    ngOnInit (): void {
-
         this.activeRoute.queryParams.subscribe(params => {
             if(JSON.stringify(params) !== '{}'){
                 this.pages = params['pages'];
             }
         });
+    }
+
+    ngOnInit (): void {
         this.authUrl = location.search;
         this.getUserInfo();
         let loginKey = localStorage.getItem('loginKey');
@@ -68,14 +67,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
      return theRequest;
      }*/
 
-    getParams (){
-        this.activeRoute.queryParams.subscribe(params => {
-            if(JSON.stringify(params) !== '{}'){
-                this.pages = params['pages'];
-            }
-        });
-    }
-
     searchData (): void {
         if( this.authUrl || this.pages === '1' ){
             this.router.navigate([ '/searchData' ]);
@@ -95,6 +86,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     purchasingOrder (): void {
+        alert(this.pages);
         if( this.authUrl || this.pages === '1'  ){
             this.router.navigate([ '/purchas' ]);
         }

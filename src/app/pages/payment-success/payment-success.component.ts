@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { KeepTwoDecimalService } from '../../providers/floatNumberService';
 
@@ -15,14 +15,16 @@ export class PaymentSuccessComponent implements OnInit{
     };
 
     constructor (  private activeRoute: ActivatedRoute,
+                   private zone:NgZone,
                    private keepTwoDecimal: KeepTwoDecimalService,
                    private router: Router, ) {
-        this.router.routeReuseStrategy.shouldReuseRoute = function() {
-            return false;
-        };
+        this.zone.run(() => {
+            alert('enabled time travel');
+        });
     }
 
     ngOnInit (): void {
+        alert('支付成功初始化')
         this.activeRoute.queryParams.subscribe(params => {
             this.payStatus = {
                 money: this.keepTwoDecimal.keepTwoDecimalFull(params.money) || '0',
