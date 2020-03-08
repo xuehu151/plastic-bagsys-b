@@ -32,6 +32,13 @@ export class HomeComponent implements OnInit {
                 }
             })
         }
+        this.activeRoute.queryParams.subscribe(params => {
+            if(JSON.stringify(params) !== '{}'){
+                this.pages = params['pages'];
+                alert(this.pages);
+                alert(typeof this.pages)
+            }
+        });
     }
 
     getUserInfo (): void {
@@ -57,8 +64,7 @@ export class HomeComponent implements OnInit {
      }*/
 
     searchData (): void {
-        alert(this.authUrl)
-        if( this.authUrl ){
+        if( this.authUrl || this.pages === '1' ){
             this.router.navigate([ '/searchData' ]);
         }
         else {
@@ -67,7 +73,7 @@ export class HomeComponent implements OnInit {
     }
 
     goDevice (): void {
-        if( this.authUrl ){
+        if( this.authUrl || this.pages === '1'  ){
             this.router.navigate([ '/device' ]);
         }
         else {
@@ -76,7 +82,7 @@ export class HomeComponent implements OnInit {
     }
 
     purchasingOrder (): void {
-        if( this.authUrl ){
+        if( this.authUrl || this.pages === '1'  ){
             this.router.navigate([ '/purchas' ]);
         }
         else {
