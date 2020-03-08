@@ -32,14 +32,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 }
             })
         }
-        setTimeout( () => {
-            this.activeRoute.queryParams.subscribe(params => {
-                if(JSON.stringify(params) !== '{}'){
-                    this.pages = params['pages'];
-                }
-            });
-            alert(123)
-        }, 1000)
+        this.activeRoute.queryParams.subscribe(params => {
+            if(JSON.stringify(params) !== '{}'){
+                this.pages = params['pages'];
+            }
+        });
+        alert(this.authUrl)
     }
 
     ngAfterViewInit(){
