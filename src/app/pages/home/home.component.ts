@@ -18,9 +18,18 @@ export class HomeComponent implements OnInit, AfterViewInit {
     constructor ( private http: HttpCustormClient,
                   private activeRoute: ActivatedRoute,
                   private router: Router, ) {
+        this.router.routeReuseStrategy.shouldReuseRoute = function() {
+            return false;
+        };
     }
 
     ngOnInit (): void {
+
+        this.activeRoute.queryParams.subscribe(params => {
+            if(JSON.stringify(params) !== '{}'){
+                this.pages = params['pages'];
+            }
+        });
         this.authUrl = location.search;
         this.getUserInfo();
         let loginKey = localStorage.getItem('loginKey');

@@ -17,6 +17,9 @@ export class PaymentSuccessComponent implements OnInit{
     constructor (  private activeRoute: ActivatedRoute,
                    private keepTwoDecimal: KeepTwoDecimalService,
                    private router: Router, ) {
+        this.router.routeReuseStrategy.shouldReuseRoute = function() {
+            return false;
+        };
     }
 
     ngOnInit (): void {
@@ -30,7 +33,7 @@ export class PaymentSuccessComponent implements OnInit{
 
 
     gohome():void{
-        this.router.navigateByUrl( '/home' );
+        this.router.navigate([ '/home' ]);
     }
 
 }
