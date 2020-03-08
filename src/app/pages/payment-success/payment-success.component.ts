@@ -19,18 +19,17 @@ export class PaymentSuccessComponent implements OnInit{
                    private keepTwoDecimal: KeepTwoDecimalService,
                    private router: Router, ) {
         this.zone.run(() => {
-            alert('enabled time travel');
+            this.activeRoute.queryParams.subscribe(params => {
+                this.payStatus = {
+                    money: this.keepTwoDecimal.keepTwoDecimalFull(params.money) || '0',
+                    consignee: params.consignee || ''
+                }
+            });
         });
     }
 
     ngOnInit (): void {
-        alert('支付成功初始化')
-        this.activeRoute.queryParams.subscribe(params => {
-            this.payStatus = {
-                money: this.keepTwoDecimal.keepTwoDecimalFull(params.money) || '0',
-                consignee: params.consignee || ''
-            }
-        });
+
     }
 
 

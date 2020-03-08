@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, NgZone } from '@angular/core';
 import { Router,  ActivatedRoute} from '@angular/router';
 import { HttpCustormClient } from '../../providers/HttpClient';
 import { ServiceConfig } from '../../providers/service.config';
@@ -9,7 +9,7 @@ import { ServiceConfig } from '../../providers/service.config';
     styleUrls: [ './home.component.scss' ]
 })
 
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit {
     userInfo: any;
     source: string = 'wechatMp';
     authUrl: string;
@@ -17,14 +17,14 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     constructor ( private http: HttpCustormClient,
                   private activeRoute: ActivatedRoute,
+                  private zone:NgZone,
                   private router: Router, ) {
-        this.router.routeReuseStrategy.shouldReuseRoute = function() {
-            return false;
-        };
-        this.activeRoute.queryParams.subscribe(params => {
-            if(JSON.stringify(params) !== '{}'){
-                this.pages = params['pages'];
-            }
+        this.zone.run(() => {
+            this.activeRoute.queryParams.subscribe(params => {
+                if(JSON.stringify(params) !== '{}'){
+                    this.pages = params['pages'];
+                }
+            });
         });
     }
 
@@ -40,9 +40,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 }
             })
         }
-    }
-
-    ngAfterViewInit(){
     }
 
     getUserInfo (): void {
