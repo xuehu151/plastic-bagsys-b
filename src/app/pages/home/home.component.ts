@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Router,  ActivatedRoute} from '@angular/router';
 import { HttpCustormClient } from '../../providers/HttpClient';
 import { ServiceConfig } from '../../providers/service.config';
@@ -9,7 +9,7 @@ import { ServiceConfig } from '../../providers/service.config';
     styleUrls: [ './home.component.scss' ]
 })
 
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
     userInfo: any;
     source: string = 'wechatMp';
     authUrl: string;
@@ -32,11 +32,19 @@ export class HomeComponent implements OnInit {
                 }
             })
         }
+    }
+
+    ngAfterViewInit(){
         this.activeRoute.queryParams.subscribe(params => {
             if(JSON.stringify(params) !== '{}'){
                 this.pages = params['pages'];
-                alert(this.pages);
-                alert(typeof this.pages)
+            }
+            alert(this.pages);
+            alert(typeof this.pages)
+        });
+        window.addEventListener('pageshow', function (e) {
+            if(e.persisted || (window.performance && window.performance.navigation.type == 2)){
+                window.location.reload()
             }
         });
     }
