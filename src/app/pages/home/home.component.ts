@@ -68,7 +68,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     searchData (): void {
-        this.getParams();
         if( this.authUrl || this.pages === '1' ){
             this.router.navigate([ '/searchData' ]);
         }
@@ -78,7 +77,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     goDevice (): void {
-        this.getParams();
         if( this.authUrl || this.pages === '1'  ){
             this.router.navigate([ '/device' ]);
         }
@@ -88,7 +86,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
     }
 
     purchasingOrder (): void {
-        this.getParams();
         if( this.authUrl || this.pages === '1'  ){
             this.router.navigate([ '/purchas' ]);
         }
