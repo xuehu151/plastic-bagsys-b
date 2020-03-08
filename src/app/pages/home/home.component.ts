@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
     userInfo: any;
     source: string = 'wechatMp';
     authUrl: string;
-    pages: number;
+    pages: string;
 
     constructor ( private http: HttpCustormClient,
                   private activeRoute: ActivatedRoute,
@@ -33,8 +33,9 @@ export class HomeComponent implements OnInit {
             })
         }
         this.activeRoute.queryParams.subscribe(params => {
-            console.info(params)
-            // if(){}
+            if(JSON.stringify(params) !== '{}'){
+                this.pages = params['pages'];
+            }
         });
     }
 
