@@ -31,6 +31,7 @@
                    [(ngModel)]="count"
                    onkeyup="value=value.replace(/^(0+)|[^\d]+/g,'')"
                    (ngModelChange)="changeForm()"
+                   (blur)="blurIn()"
                    placeholder="请输入申请数量">
         </div>
         <div class="form-item">
@@ -38,6 +39,7 @@
             <input type="text"
                    [(ngModel)]="consignee"
                    (ngModelChange)="changeForm()"
+                   (blur)="blurIn()"
                    placeholder="请输入收货人">
         </div>
         <div class="form-item">
@@ -45,6 +47,7 @@
             <input type="text"
                    [(ngModel)]="signeeMobile"
                    (ngModelChange)="changeForm()"
+                   (blur)="blurIn()"
                    placeholder="请输入收货人电话">
         </div>
         <div class="form-item">
@@ -52,6 +55,7 @@
             <input type="text"
                    [(ngModel)]="address"
                    (ngModelChange)="changeForm()"
+                   (blur)="blurIn()"
                    placeholder="请输入收货地址">
         </div>
         <div class="form-item">
@@ -59,6 +63,7 @@
             <input type="text"
                    [(ngModel)]="remark"
                    (ngModelChange)="changeForm()"
+                   (blur)="blurIn()"
                    placeholder="请输入备注">
         </div>
     </div>
