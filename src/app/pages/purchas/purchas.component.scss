@@ -7,19 +7,10 @@ body {
     background: #f1f1f4;
 }
 
-#withdrawal {
-    height: 100%;
-}
-
 .withdrawal {
-    height: 100%;
-    width:100%;
     font-size: 16px;
+    height: 100%;
     position: relative;
-    overflow-y: scroll;
-    display:fixed;
-    top:0;
-    left:0;
 }
 
 .title {
