@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpCustormClient } from '../../providers/HttpClient';
 import { ServiceConfig } from "../../providers/service.config";
@@ -18,7 +18,9 @@ export class PurchasHistoryComponent implements OnInit{
     goodsList: Array<any> = [];
 
     constructor (  private http: HttpCustormClient,
+                   private zone:NgZone,
                    private router: Router, ) {
+        this.zone.run(() => { });
     }
 
     ngOnInit (): void {
