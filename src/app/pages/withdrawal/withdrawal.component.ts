@@ -102,5 +102,8 @@ export class WithdrawalComponent implements OnInit {
         })
     }
 
+    blurIn() {
+        window.scroll(0, 0)
+    }
 
 }

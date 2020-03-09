@@ -26,6 +26,7 @@
             <input type="text"
                    [(ngModel)]="amount"
                    (ngModelChange)="formChange()"
+                   (blur)="blurIn()"
                    placeholder="请输入整数金额">
         </div>
         <div class="form-item">
@@ -33,6 +34,7 @@
             <input type="text"
                    [(ngModel)]="bankAccount"
                    (ngModelChange)="formChange()"
+                   (blur)="blurIn()"
                    placeholder="请输入提现人姓名">
         </div>
         <div class="form-item">
@@ -40,6 +42,7 @@
             <input type="text"
                    [(ngModel)]="bankPhone"
                    (ngModelChange)="formChange()"
+                   (blur)="blurIn()"
                    placeholder="请输入相应手机号">
         </div>
         <div class="form-item">
@@ -47,6 +50,7 @@
             <input type="text"
                    [(ngModel)]="idCard"
                    (ngModelChange)="formChange()"
+                   (blur)="blurIn()"
                    placeholder="请输入相应身份证号">
         </div>
         <div class="form-item">
@@ -54,6 +58,7 @@
             <input type="text"
                    [(ngModel)]="bankName"
                    (ngModelChange)="formChange()"
+                   (blur)="blurIn()"
                    placeholder="请输入相应开户行">
         </div>
         <div class="form-item">
@@ -61,6 +66,7 @@
             <input type="text"
                    [(ngModel)]="bankCard"
                    (ngModelChange)="formChange()"
+                   (blur)="blurIn()"
                    placeholder="请输入相应银行卡号">
         </div>
     </div>
