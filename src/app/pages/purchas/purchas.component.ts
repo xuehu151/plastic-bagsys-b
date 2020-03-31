@@ -92,6 +92,10 @@ export class PurchasComponent implements OnInit{
         })
     }
 
+    blurIn() {
+        window.scroll(0, 0)
+    }
+
     withdrawalsRecord(): void{
         this.router.navigate([ '/purchasHistory' ]);
     }
