@@ -148,7 +148,6 @@ export class HttpCustormClient {
             cb(res);
         }else {
             // this.toastr.showToast('danger', '',res['message']);
-            alert(res['message']);
             localStorage.clear();
             setTimeout( () => {
                 this.router.navigate(['/login']);
