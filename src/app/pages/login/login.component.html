@@ -24,7 +24,7 @@
                      (click)="clearForm(2)">
             </p>
             <p class="form_btn">
-                <button (click)="login()">登录</button>
+                <button (click)="login()" [disabled]="!password || !username">登录</button>
             </p>
         </div>
     </div>

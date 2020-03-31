@@ -93,7 +93,7 @@ export class HttpCustormClient {
             this.getPost(URL, data, cb, { headers: headers.headers.append('X-Auth-Token', TOKEN) });
         }
         else {
-            this.router.navigate([ '/customAuth/login' ]);
+            this.router.navigate([ '/login' ]);
             this.getPost(URL, data, cb);
         }
     }
@@ -147,7 +147,6 @@ export class HttpCustormClient {
         if(res['code'] === 10000){
             cb(res);
         }else {
-            // this.toastr.showToast('danger', '',res['message']);
             localStorage.clear();
             setTimeout( () => {
                 this.router.navigate(['/login']);

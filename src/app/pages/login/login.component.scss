@@ -47,17 +47,20 @@
 
 .db_login .form_btn {
     margin-top: 4rem;
+    button {
+        border: 0;
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        background-color: #3284fc;
+        border-radius: 3px;
+        outline: none;
+    }
+    button:disabled {
+        background-color: #83a6fb;
+    }
 }
 
-.db_login .form_btn button {
-    border: 0;
-    width: 100%;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    color: #fff;
-    font-size: 14px;
-    background-color: #3284fc;
-    border-radius: 3px;
-    outline: none;
-}
