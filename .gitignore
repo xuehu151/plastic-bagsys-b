@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+/plastic-bagsys-b
 /tmp
 /out-tsc
 # Only exists if Bazel was run
